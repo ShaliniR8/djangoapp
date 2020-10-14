@@ -8,4 +8,3 @@ class Student(models.Model):
      Uni = models.CharField(max_length=100)
      GPA = models.FloatField(default=0.0)
 
-class 
