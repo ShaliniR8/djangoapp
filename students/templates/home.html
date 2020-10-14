@@ -1,24 +1,25 @@
-<html> 
-     <body> 
+{% extends 'base.html' %}
 
+{% block content %}
+<div class="row"> 
+     <div class="col-sm">
+     <h2> Enter your name to see details </h2>
+     <form action='info' method="GET">
+     <input type = 'text' name='name' placeholder='Enter First Name' />
+          <input type='submit' value='search'/>
+     </form>
+     </div>
+     
+     
+     <div class="col-sm">
+     <h2> Store your details </h2>
+     <form method="post">
+     {% csrf_token %}
+     {{form.as_p}}
+     <button type="submit" name = 'submit'> Submit </button>
+     </form>
+     </div>
+     
+</div>
 
-               <h2> Enter your name to see details </h2>
-               <form action='info' method="GET">
-               <input type = 'text' name='name' placeholder='Enter First Name' />
-                    <input type='submit' value='search'/>
-               </form>
-
-          <br> 
-          <h1>OR</h1> 
-          <br> 
-
-               <h2> Store your details </h2>
-               <form method="post">
-               {% csrf_token %}
-               {{form.as_p}}
-               <button type="submit" name = 'submit'> Submit </button>
-               </form>
-
-
-     </body>
-</html>
+{%endblock%}
